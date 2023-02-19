@@ -12,4 +12,9 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  anioEnVigencia: number = new Date().getTime();
+  anios = this.anioEnVigencia - 2000;
+
+
+
 }

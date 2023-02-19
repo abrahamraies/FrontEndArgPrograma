@@ -1,6 +1,4 @@
-/**
-* Template Name: Portfolio
-*/
+
 (function() {
   "use strict";
 
@@ -122,9 +120,7 @@
     }
   });
 
-  /**
-   * Hero type effect
-   */
+
   const typed = select('.typed')
   if (typed) {
     let typed_strings = typed.getAttribute('data-typed-items')
@@ -136,23 +132,6 @@
       backSpeed: 50,
       backDelay: 2000
     });
-  }
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
   }
 
   /**
@@ -250,9 +229,5 @@
     })
   });
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
 
 })()
