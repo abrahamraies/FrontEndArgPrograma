@@ -12,6 +12,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,13 +24,15 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     ContactComponent,
     SkillsComponent,
     ResumeComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     NgxTypedJsModule,
     ProgressBarAngularModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
