@@ -1,4 +1,4 @@
-<section id="contact" class="contact">
+<section id="contact" class="contact" *ngIf="DatosCargados == 1">
   <div class="container">
 
     <div class="section-title">
@@ -12,19 +12,19 @@
           <div class="address">
             <i class="bi bi-geo-alt"></i>
             <h4>Direccion:</h4>
-            <p>Castelli 1000, Venado Tuerto, VT 2600</p>
+            <p>{{DatosContacto.domicilio}},{{DatosContacto.ciudad}} CP: 2600</p>
           </div>
 
           <div class="email">
             <i class="bi bi-envelope"></i>
             <h4>Email:</h4>
-            <p>abrahamraies@gmail.com</p>
+            <p>{{DatosContacto.correo}}</p>
           </div>
 
           <div class="phone">
             <i class="bi bi-phone"></i>
             <h4>Teléfono:</h4>
-            <p>+54 9 3462 539842</p>
+            <p>+54 9 {{DatosContacto.celular}}</p>
           </div>
 
           <iframe src="https://goo.gl/maps/jxUxsNGBcaEVvCfj8" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen ></iframe>

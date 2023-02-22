@@ -1,9 +1,9 @@
 <section id="about" class="about">
-  <div class="container">
+  <div class="container" *ngIf="portfolioCargado == 1">
 
     <div class="section-title">
       <h2>Sobre mi</h2>
-      <p>Mi nombre es Abraham Raies, tengo {{anios | date: 'yy' }} años y soy desarrollador. Me gusta viajar, conocer nuevos lugares, nuevas personas, me adapto facil a las distintas situaciones del trabajo, soy responsable, solidario, y busco formar parte de un equipo en el cual exista el compañerismo, y un buen ambiente laboral. </p>
+      <p>{{miPortfolio.sobre_mi}}</p>
     </div>
 
     <div class="row">
@@ -11,30 +11,32 @@
         <img src="../../../assets/img/Perfil.jpeg" class="img-fluid" alt="">
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-        <h3>Desarrollador</h3>
+        <h3>{{miPortfolio.ocupacion}}</h3>
         <p class="fst-italic">
-          Me encuentro trabajando con .Net Core, SAP CPI en una empresa de seguros, y haciendo proyectos como hobbie de Spring boot y Angular.
+          {{miPortfolio.sobre_mi_r1}}
         </p>
         <div class="row">
           <div class="col-lg-6">
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <strong>Nacimiento:</strong> <span>07 June 2000</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Nacionalidad:</strong> <span>Argentina</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span>Venado Tuerto,Santa Fe</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Estado civil:</strong> <span>Soltero sin hijos</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Nacimiento:</strong> <span>07 Junio 2000</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Nacionalidad:</strong> <span>{{miPortfolio.nacionalidad}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span>{{miPortfolio.ciudad}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Estado civil:</strong> <span>{{miPortfolio.estado_civil}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>DNI:</strong> <span>{{miPortfolio.dni}}</span></li>
             </ul>
           </div>
           <div class="col-lg-6">
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <strong>Grado:</strong> <span>Semi Senior</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>abrahamraies@gmail.com</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Celular:</strong> <span>3462539842</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Disponible</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Cuit:</strong> <span>{{miPortfolio.cuit}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{miPortfolio.correo}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Celular:</strong> <span>{{miPortfolio.celular}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{{miPortfolio.freelance}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Grado:</strong> <span>{{miPortfolio.grade}}</span></li>
             </ul>
           </div>
         </div>
         <p>
-          Aspiro a poder seguir ampliando mis conocimientos en nuevas tecnologias y nuevos desafios. Me considero una persona autodidacta,me gusta trabajar en equipo, no me gusta hacer las cosas "porque sí", prefiero entender e interpretar el/los problemas, y solucionarlos de raiz.
+          {{miPortfolio.sobre_mi_r2}}
         </p>
       </div>
     </div>

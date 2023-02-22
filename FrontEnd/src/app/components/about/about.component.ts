@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-about',
@@ -7,14 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datos:PortfolioService) { }
+  miPortfolio:any;
+  portfolioCargado:number = 0;
 
   ngOnInit(): void {
+    this.obtenerDatosPersona();
   }
 
-  anioEnVigencia: number = new Date().getTime();
-  anios = this.anioEnVigencia - 2000;
-
+  private obtenerDatosPersona(){
+    this.datos.obtenerDatosPersona().subscribe(data => {
+      this.miPortfolio = data[0];
+      this.portfolioCargado = 1;
+    });
+  }
 
 
 }
