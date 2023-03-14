@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
 
   contactForm!: FormGroup;
 
-  constructor(private readonly fb: FormBuilder,private datos:PortfolioService) { }
+  constructor(private readonly fb: FormBuilder,private persona:PersonaService) { }
   DatosContacto:any;
   DatosCargados:number = 0;
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
   }
 
   private datosContacto(){
-    this.datos.obtenerDatosPersona().subscribe(data => {
+    this.persona.obtenerDatosPersona().subscribe(data => {
       this.DatosContacto = data[0];
       this.DatosCargados = 1;
     });

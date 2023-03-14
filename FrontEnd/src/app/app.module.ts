@@ -14,6 +14,10 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AllcomponentsComponent } from './components/allcomponents/allcomponents.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -25,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SkillsComponent,
     ResumeComponent,
     PortfolioComponent,
-    LoginComponent
+    LoginComponent,
+    AllcomponentsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProgressBarAngularModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

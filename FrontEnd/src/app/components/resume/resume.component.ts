@@ -1,5 +1,7 @@
+import { EducacionService } from './../../services/educacion.service';
+import { CursosService } from './../../services/cursos.service';
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { ExplabService } from 'src/app/services/explab.service';
 
 @Component({
   selector: 'app-resume',
@@ -8,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor(private datos:PortfolioService) { }
+  constructor(private s_curso:CursosService,private s_educacion:EducacionService,private s_explab:ExplabService) { }
   Cursos:any;
   Educacion:any;
   Experiencia:any;
@@ -21,15 +23,15 @@ export class ResumeComponent implements OnInit {
   }
 
   private obtenerDatosResumen(){
-    this.datos.obtenerDatosCursos().subscribe(data => {
+    this.s_curso.obtenerDatosCursos().subscribe(data => {
       this.Cursos = data;
       this.cursosCargados = 1;
     });
-    this.datos.obtenerDatosEducacion().subscribe(data => {
+    this.s_educacion.obtenerDatosEducacion().subscribe(data => {
       this.Educacion = data;
       this.educacionCargado = 1;
     });
-    this.datos.obtenerDatosExpProf().subscribe(data => {
+    this.s_explab.obtenerDatosExperiencia().subscribe(data => {
       this.Experiencia = data;
       this.experienciaCargado = 1;
     });
