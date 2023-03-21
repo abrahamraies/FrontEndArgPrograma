@@ -12,58 +12,22 @@
           <div class="address">
             <i class="bi bi-geo-alt"></i>
             <h4>Direccion:</h4>
-            <p>{{DatosContacto.domicilio}},{{DatosContacto.ciudad}} CP: 2600</p>
+            <p>{{persona.domicilio}},{{persona.ciudad}} CP: 2600</p>
           </div>
 
           <div class="email">
             <i class="bi bi-envelope"></i>
             <h4>Email:</h4>
-            <p>{{DatosContacto.correo}}</p>
+            <p><a href="mailto:abrahamraies@gmail.com">abrahamraies@gmail.com</a></p>
           </div>
 
           <div class="phone">
             <i class="bi bi-phone"></i>
             <h4>Teléfono:</h4>
-            <p>+54 9 {{DatosContacto.celular}}</p>
+            <p>+54 9 {{persona.celular}}</p>
           </div>
-
-          <iframe src="https://goo.gl/maps/jxUxsNGBcaEVvCfj8" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen ></iframe>
         </div>
 
-      </div>
-
-      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="php-email-form">
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="name">Nombre</label>
-              <input name="name" type="text" placeholder="¿Cuál es su nombre?*"  class="form-control" name="name" formControlName="name"/>
-              <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']" class="alert alert-danger">El campo es obligatorio</div>
-              <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="alert alert-danger">El nombre debe tener al menos {{contactForm.get('name')?.errors?.['minlength'].requiredLength}} caracteres</div>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="name">Correo Electrónico</label>
-              <input name="emailaddress" placeholder="¿Cuál es su email?*" class="form-control" type="email" name="email" formControlName="email"/>
-              <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']" class="alert alert-danger">El campo es obligatorio</div>
-              <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="alert alert-danger">El campo debe ser un correo valido</div>
-              <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['minlength']" class="alert alert-danger">El nombre debe tener al menos {{contactForm.get('email')?.errors?.['minlength'].requiredLength}} caracteres</div>
-            </div>
-            <div class="form-group">
-              <label for="name">Asunto</label>
-              <input name="reason" placeholder="¿Cuál es el asunto?*" class="form-control" type="text" name="reason" formControlName="reason"/>
-              <div *ngIf="contactForm.get('reason')?.touched && contactForm.get('reason')?.errors?.['required']" class="alert alert-danger">El campo es obligatorio</div>
-              <div *ngIf="contactForm.get('reason')?.touched && contactForm.get('reason')?.errors?.['minlength']" class="alert alert-danger">El nombre debe tener al menos {{contactForm.get('reason')?.errors?.['minlength'].requiredLength}} caracteres</div>
-            </div>
-            <div class="form-group">
-              <label for="name">Mesanje</label>
-              <textarea rows="14" cols="50" placeholder="Por favor, ingrese su mensaje*" class="form-control" name="message" formControlName="message"></textarea>
-              <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.errors?.['required']" class="alert alert-danger">El campo es obligatorio</div>
-              <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.errors?.['minlength']" class="alert alert-danger">El nombre debe tener al menos {{contactForm.get('message')?.errors?.['minlength'].requiredLength}} caracteres</div>
-            </div>
-
-          </div>
-          <button type="submit" class="btn btn-primary" style="background-color:green; float:right" [disabled]="contactForm.invalid">Enviar</button>
-        </form>
       </div>
 
     </div>

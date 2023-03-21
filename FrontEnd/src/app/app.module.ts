@@ -16,6 +16,17 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AllcomponentsComponent } from './components/allcomponents/allcomponents.component';
 import { FormsModule } from '@angular/forms';
+import { EditAboutComponent } from './components/about/edit-about.component';
+import { EditResumeComponent } from './components/resume/edit-resume.component';
+import { AddCursosComponent } from './components/cursos/add-cursos.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { EditCursoComponent } from './components/cursos/edit-curso.component';
+import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
+import { AddEducacionComponent } from './components/educacion/add-educacion.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { ExperienciaPComponent } from './components/expProfesional/experiencia-p.component';
+import { EditExperienciaPComponent } from './components/expProfesional/edit-experiencia-p.component';
+import { AddExperienciaPComponent } from './components/expProfesional/add-experiencia-p.component';
 
 
 
@@ -30,7 +41,18 @@ import { FormsModule } from '@angular/forms';
     ResumeComponent,
     PortfolioComponent,
     LoginComponent,
-    AllcomponentsComponent
+    AllcomponentsComponent,
+    EditAboutComponent,
+    EditResumeComponent,
+    AddCursosComponent,
+    CursosComponent,
+    EditCursoComponent,
+    EditEducacionComponent,
+    AddEducacionComponent,
+    EducacionComponent,
+    ExperienciaPComponent,
+    EditExperienciaPComponent,
+    AddExperienciaPComponent
   ],
   imports: [
     BrowserModule,

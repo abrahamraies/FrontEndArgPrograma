@@ -1,0 +1,169 @@
+<div class="container" *ngIf="persona">
+  <br />
+  <h2>Editar - Sobre Mi</h2>
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="persona.nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            name="apellido"
+            [(ngModel)]="persona.apellido"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="sobreMi">Sobre mi</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sobreMi"
+            name="sobreMi"
+            [(ngModel)]="persona.sobre_mi"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="DActual">Descripcion Actual</label>
+          <input
+            type="text"
+            class="form-control"
+            id="DActual"
+            name="DActual"
+            [(ngModel)]="persona.sobre_mi_r1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="nacionalad">Nacionalidad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nacionalad"
+            name="nacionalad"
+            [(ngModel)]="persona.nacionalidad"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ciudad"
+            name="ciudad"
+            [(ngModel)]="persona.ciudad"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="estadoCivil">Estado Civil</label>
+          <input
+            type="text"
+            class="form-control"
+            id="estadoCivil"
+            name="estadoCivil"
+            [(ngModel)]="persona.estado_civil"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="dni">DNI</label>
+          <input
+            type="text"
+            class="form-control"
+            id="dni"
+            name="dni"
+            [(ngModel)]="persona.dni"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cuit">Cuit</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cuit"
+            name="cuit"
+            [(ngModel)]="persona.cuit"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="persona.correo"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="celular">Celular</label>
+          <input
+            type="text"
+            class="form-control"
+            id="celular"
+            name="celular"
+            [(ngModel)]="persona.celular"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="freelance">Freelance</label>
+          <input
+            type="text"
+            class="form-control"
+            id="freelance"
+            name="freelance"
+            [(ngModel)]="persona.freelance"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="grade">Grado</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grade"
+            name="grade"
+            [(ngModel)]="persona.nivelIngles"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="DFinal">Descipcion Final</label>
+          <input
+            type="text"
+            class="form-control"
+            id="DFinal"
+            name="DFinal"
+            [(ngModel)]="persona.sobre_mi_r2"
+            required
+          />
+        </div>
+        <br />
+      </div>
+    </div>
+    <button class="btn btn-success" >Editar sobre mi</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Salir sin editar</button>
+  </form>
+
+</div>

@@ -1,3 +1,4 @@
+import { TokenService } from './../../services/token.service';
 import { PersonaService } from './../../services/persona.service';
 import { Component, OnInit } from '@angular/core';
 import { persona } from 'src/app/models/persona';
@@ -10,12 +11,21 @@ import { persona } from 'src/app/models/persona';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private datos:PersonaService) { }
+  constructor(private datos:PersonaService, private tokenService:TokenService) { }
   persona!:persona;
   portfolioCargado:number = 0;
 
+  isLogged = false;
+
   ngOnInit(): void {
     this.obtenerDatosPersona();
+
+    if(this.tokenService.getToken()){
+      if(this.tokenService.getAuthorities().toString().includes("ROLE_ADMIN"))
+        this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   private obtenerDatosPersona(){

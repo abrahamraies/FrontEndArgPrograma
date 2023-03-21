@@ -1,0 +1,93 @@
+<div class="container" *ngIf="explab">
+  <br />
+  <h2>Editar - Experiencia</h2>
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="row">
+        <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="titulo"
+            name="titulo"
+            [(ngModel)]="explab.titulo"
+            required
+          />
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="explab.nombre"
+            required
+          />
+          <label for="inicio">Inicio</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="inicio"
+            name="inicio"
+            [(ngModel)]="explab.inicio"
+            required
+          />
+          <label for="fin">Fin</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="fin"
+            name="fin"
+            [(ngModel)]="explab.fin"
+            required
+          />
+          <label for="tarea1">Tarea 1</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="tarea1"
+            name="tarea1"
+            [(ngModel)]="explab.tarea1"
+            required
+          />
+          <label for="tarea2">tarea 2</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="tarea2"
+            name="tarea2"
+            [(ngModel)]="explab.tarea2"
+            required
+          />
+          <label for="tarea3">tarea 3</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="tarea3"
+            name="tarea3"
+            [(ngModel)]="explab.tarea3"
+            required
+          />
+          <label for="tarea4">tarea 4</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="tarea4"
+            name="tarea4"
+            [(ngModel)]="explab.tarea4"
+            required
+          />
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Editar Experiencia</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Volver atras</button>
+  </form>
+  <br>
+</div>

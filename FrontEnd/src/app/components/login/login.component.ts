@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { TokenService } from './../../services/token.service';
-import { loginUsuario } from './../../models/loginUsuario';
+import { LoginUsuario } from './../../models/loginUsuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   isLogged = false;
   isLogginFail = false;
-  loginUsuario!: loginUsuario;
+  loginUsuario!: LoginUsuario;
   username!: string;
   password!: string;
   roles: string[] = [];
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.loginUsuario = new loginUsuario(this.username,this.password);
+    this.loginUsuario = new LoginUsuario(this.username,this.password);
     this.authService.login(this.loginUsuario).subscribe(data => {
       this.isLogged = true;
       this.isLogginFail = false;
@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
       this.router.navigate([''])
+      window.location.reload();
     }, err => {
       this.isLogged = false;
       this.isLogginFail = true;

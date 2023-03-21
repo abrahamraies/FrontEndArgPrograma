@@ -1,0 +1,21 @@
+<div class="container" *ngIf="experiencias">
+  <br />
+  <h2>Editar - Experiencia</h2>
+    <div class="row">
+        <div class="form-group" *ngFor="let experiencia of experiencias" >
+          <ol>
+            <li value="{{experiencia.id_exp}}">
+              {{experiencia.titulo}} - {{experiencia.nombre}} <br>
+              Duracion: {{experiencia.inicio}}-{{experiencia.fin}} <br>
+              Tareas: <br>
+              {{experiencia.tarea1}} <br>
+              {{experiencia.tarea2}} <br>
+              {{experiencia.tarea3}} <br>
+              {{experiencia.tarea4}} <br>
+              <button (click)="onUpdate(experiencia.id_exp)" class="btn btn-info">Editar Experiencia</button> <button (click)="onDelete(experiencia.id_exp)" class="btn btn-danger" style="margin-left: 5px;">Eliminar Experiencia</button></li>
+          </ol>
+        </div>
+    </div>
+    <br>
+    <button (click)="addExperiencia()" class="btn btn-primary">Agregar Experiencia</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Salir sin editar</button>
+</div>

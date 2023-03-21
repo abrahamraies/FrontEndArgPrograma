@@ -1,6 +1,12 @@
 <section id="about" class="about">
   <div class="container" *ngIf="portfolioCargado == 1">
 
+    <div style="display: flex; justify-content: flex-end">
+      <button type="button"  class="btn btn-primary" routerLink="/editAbout/1" *ngIf="isLogged" >
+        Editar Sobre mi
+      </button>
+    </div>
+
     <div class="section-title">
       <h2>Sobre mi</h2>
       <p>{{persona.sobre_mi}}</p>
@@ -31,7 +37,7 @@
               <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{persona.correo}}</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>Celular:</strong> <span>{{persona.celular}}</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{{persona.freelance}}</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Grado:</strong> <span>{{persona.grade}}</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Nivel Ingles:</strong> <span>{{persona.nivelIngles}}</span></li>
             </ul>
           </div>
         </div>

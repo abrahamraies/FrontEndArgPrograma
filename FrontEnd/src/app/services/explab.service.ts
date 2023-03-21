@@ -14,6 +14,10 @@ export class ExplabService {
     return this.http.get(this.url);
   }
 
+  public detalleExperiencia(id:number): Observable<Explab>{
+    return this.http.get<Explab>(this.url + `detalle/${id}`);
+  }
+
   public agregarDatosExperiencia(experiencia: Explab): Observable<any>{
     return this.http.post<any>(this.url+"nueva",experiencia);
   }

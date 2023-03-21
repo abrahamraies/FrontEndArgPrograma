@@ -1,4 +1,4 @@
-export class loginUsuario{
+export class LoginUsuario{
   username!:string;
   password!:string;
 

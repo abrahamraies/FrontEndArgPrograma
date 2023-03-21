@@ -14,6 +14,10 @@ export class EducacionService {
     return this.http.get(this.url);
   }
 
+  public detalleEducacion(id:number): Observable<Educacion>{
+    return this.http.get<Educacion>(this.url + `detalle/${id}`);
+  }
+
   public agregarDatosEducacion(educacion: Educacion): Observable<any>{
     return this.http.post<any>(this.url+"nuevo",educacion);
   }

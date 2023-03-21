@@ -1,7 +1,7 @@
+import { Curso } from './../models/curso';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Curso } from '../models/curso';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,12 @@ export class CursosService {
   url:string="http://localhost:8080/cursos/"
   constructor(private http:HttpClient) { }
 
-  public obtenerDatosCursos():Observable<any>{
-    return this.http.get(this.url);
+  public obtenerDatosCursos():Observable<Curso[]>{
+    return this.http.get<Curso[]>(this.url);
+  }
+
+  public detalleCursos(id:number): Observable<Curso>{
+    return this.http.get<Curso>(this.url + `detalle/${id}`);
   }
 
   public agregarDatosCursos(Cursos: Curso): Observable<any>{

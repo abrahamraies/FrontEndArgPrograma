@@ -3,10 +3,10 @@ export class Educacion {
   titulo:string;
   nombre:string;
   inicio:number;
-  fin:number;
+  fin:string;
   resumen_edu:string;
 
-  constructor(titulo:string,nombre:string,inicio:number,fin:number,resumen_edu:string){
+  constructor(titulo:string,nombre:string,inicio:number,fin:string,resumen_edu:string){
     this.titulo = titulo;
     this.nombre = nombre;
     this.inicio = inicio;

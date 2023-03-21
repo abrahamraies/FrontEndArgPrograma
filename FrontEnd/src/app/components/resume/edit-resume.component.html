@@ -1,0 +1,24 @@
+<div class="container" *ngIf="persona">
+  <br />
+  <h2>Editar - Sobre Mi</h2>
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="row">
+        <div class="form-group">
+          <label for="resumen">Resumen</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="resumen"
+            name="resumen"
+            [(ngModel)]="persona.resumen"
+            required
+          />
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Editar resumen</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Salir sin editar</button>
+  </form>
+  <br>
+  <button (click)="NavEducacion()" class="btn btn-info" >Educacion</button><button (click)="NavCursos()" class="btn btn-info" style="margin-left: 5px;">Cursos</button><button (click)="NavExpProf()" class="btn btn-info" style="margin-left: 5px;">Experiencia Profesional</button>
+</div>

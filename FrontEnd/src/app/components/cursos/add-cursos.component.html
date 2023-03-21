@@ -1,0 +1,43 @@
+<div class="container">
+  <br />
+  <h2>Agregar curso</h2>
+  <form (ngSubmit)="onAdd()" novalidate #f="ngForm">
+    <div class="row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="nombre"
+            required
+          />
+          <label for="autor">Autor</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="autor"
+            name="autor"
+            [(ngModel)]="autor"
+            required
+          />
+          <label for="fecha">Fecha</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="fecha"
+            name="fecha"
+            [(ngModel)]="fecha"
+            required
+          />
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Agregar curso</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Volver atras</button>
+  </form>
+  <br>
+</div>

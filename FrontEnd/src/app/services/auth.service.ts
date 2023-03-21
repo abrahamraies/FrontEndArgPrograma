@@ -1,5 +1,5 @@
 import { JwtDto } from './../models/JwtDto';
-import { loginUsuario } from './../models/loginUsuario';
+import { LoginUsuario } from './../models/loginUsuario';
 import { Observable } from 'rxjs';
 import { NuevoUsuario } from './../models/nuevoUsuario';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +17,7 @@ export class AuthService {
     return this.httpClient.post<any>(this.authURL+'nuevo',nuevoUsuario);
   }
 
-  public login(loginUsuario:loginUsuario): Observable<JwtDto>{
+  public login(loginUsuario:LoginUsuario): Observable<JwtDto>{
     return this.httpClient.post<JwtDto>(this.authURL+'login',loginUsuario);
   }
 }

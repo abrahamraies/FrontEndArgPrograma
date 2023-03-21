@@ -1,0 +1,63 @@
+<div class="container" *ngIf="educacion">
+  <br />
+  <h2>Editar - Educacion</h2>
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="row">
+        <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="titulo"
+            name="titulo"
+            [(ngModel)]="educacion.titulo"
+            required
+          />
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="educacion.nombre"
+            required
+          />
+          <label for="inicio">Inicio</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="inicio"
+            name="inicio"
+            [(ngModel)]="educacion.inicio"
+            required
+          />
+          <label for="fin">Fin</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="fin"
+            name="fin"
+            [(ngModel)]="educacion.fin"
+            required
+          />
+          <label for="resumen_edu">Resumen</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="resumen_edu"
+            name="resumen_edu"
+            [(ngModel)]="educacion.resumen_edu"
+            required
+          />
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Editar Educación</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Volver atras</button>
+  </form>
+  <br>
+</div>

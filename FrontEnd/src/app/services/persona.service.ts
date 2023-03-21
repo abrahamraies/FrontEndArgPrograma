@@ -10,8 +10,12 @@ export class PersonaService {
   url:string="http://localhost:8080/persona/"
   constructor(private http:HttpClient) { }
 
-  public obtenerDatosPersona():Observable<any>{
-    return this.http.get(this.url);
+  public obtenerDatosPersona():Observable<persona[]>{
+    return this.http.get<persona[]>(this.url);
+  }
+
+  public detallePersona(id:number): Observable<persona>{
+    return this.http.get<persona>(this.url + `detalle/${id}`);
   }
 
   public agregarDatosPersona(persona: persona): Observable<any>{

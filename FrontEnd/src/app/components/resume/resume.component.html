@@ -1,64 +1,62 @@
 <section id="resume" class="resume">
-  <div class="container">
+  <div class="container" *ngIf="portfolioCargado == 1">
 
+  <div style="display: flex; justify-content: flex-end">
+    <button type="button"  class="btn btn-primary" routerLink="/editResume/1" *ngIf="isLogged" >
+      Editar Resumen
+    </button>
+  </div>
     <div class="section-title">
       <h2>Resumen</h2>
-      <p>Estudié durante 3 años la carrera de Ingenieria en Sistemas de información en la Universidad Tecnológica Nacional de Rosario, luego comenzó la pandemia y me volví a mi ciudad de origen, Venado Tuerto, allí comencé la carrera de Tecnicatura en Programación en la Universidad Tecnologica Nacional, finalicé la carrera en Noviembre del 2022. Actualamente me encuentro realizando cursos y aprendiendo ingles. </p>
+      <p>{{persona.resumen}}</p>
     </div>
 
     <div class="row" *ngIf="cursosCargados == 1">
       <div class="col-lg-6" data-aos="fade-up">
+        <button type="button"  class="btn btn-primary" routerLink="/editCursos" *ngIf="isLogged" >
+          Editar Cursos
+        </button>
         <h3 class="resume-title">Cursos</h3>
+        <div class="resume-item">
+          <h4>Google</h4>
+          <ul *ngFor="let curso of Cursos">
+            <li *ngIf="curso.autor == 'Google'">{{curso.nombre}} - {{curso.fecha}}</li>
+          </ul>
+        </div>
         <div class="resume-item pb-0">
-          <h4>{{Cursos[0].autor}}</h4>
-          <ul>
-            <li>{{Cursos[0].nombre}} - {{Cursos[0].fecha}}</li>
-          </ul>
           <h4>Udemy</h4>
-          <ul>
-            <li>{{Cursos[1].nombre}} - {{Cursos[1].autor}} - {{Cursos[1].fecha}}</li>
-            <li>{{Cursos[2].nombre}} - {{Cursos[2].autor}} - {{Cursos[2].fecha}}</li>
-            <li>{{Cursos[3].nombre}} - {{Cursos[3].autor}} - {{Cursos[3].fecha}}</li>
-            <li>{{Cursos[4].nombre}} - {{Cursos[4].autor}} - {{Cursos[4].fecha}}</li>
-            <li>{{Cursos[5].nombre}} - {{Cursos[5].autor}} - {{Cursos[5].fecha}}</li>
+          <ul *ngFor="let curso of Cursos">
+            <li *ngIf="curso.autor != 'Google'">{{curso.nombre}} - {{curso.autor}} - {{curso.fecha}}</li>
           </ul>
         </div>
 
-
+        <button type="button"  class="btn btn-primary" routerLink="/Educacion" *ngIf="isLogged" >
+          Editar Educacion
+        </button>
         <h3 class="resume-title">Educacion</h3>
-        <div class="resume-item" *ngIf="educacionCargado == 1">
-          <h4>{{Educacion[0].titulo}}</h4>
-          <h5>{{Educacion[0].inicio}} - {{Educacion[0].fin}}</h5>
-          <p><em>{{Educacion[0].nombre}}</em></p>
-          <p>{{Educacion[0].resumen_edu}}</p>
-        </div>
-        <div class="resume-item" *ngIf="educacionCargado == 1">
-          <h4>{{Educacion[1].titulo}}</h4>
-          <h5>{{Educacion[1].inicio}} - {{Educacion[1].fin}}</h5>
-          <p><em>{{Educacion[1].nombre}}</em></p>
-          <p>{{Educacion[1].resumen_edu}}</p>
+        <div  *ngFor="let educacion of Educacion">
+          <div class="resume-item" *ngIf="educacionCargado == 1">
+            <h4>{{educacion.titulo}}</h4>
+            <h5>{{educacion.inicio}} - {{educacion.fin}}</h5>
+            <p><em>{{educacion.nombre}}</em></p>
+            <p>{{educacion.resumen_edu}}</p>
+          </div>
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100" *ngIf="experienciaCargado == 1">
+        <button type="button"  class="btn btn-primary" routerLink="/Experiencia" *ngIf="isLogged" >
+          Editar Experiencia
+        </button>
         <h3 class="resume-title">Experiencia profesional</h3>
-        <div class="resume-item">
-          <h4>{{Experiencia[0].titulo}}</h4>
-          <h5>{{Experiencia[0].inicio}} - {{Experiencia[0].fin}}</h5>
-          <p><em>{{Experiencia[0].nombre}} </em></p>
+        <div class="resume-item pb-0" *ngFor="let experiencia of Experiencia">
+          <h4>{{experiencia.titulo}}</h4>
+          <h5>{{experiencia.inicio}} - {{experiencia.fin}}</h5>
+          <p><em>{{experiencia.nombre}} </em></p>
           <ul>
-            <li>{{Experiencia[0].tarea1}}</li>
-            <li>{{Experiencia[0].tarea2}}</li>
-            <li>{{Experiencia[0].tarea3}}</li>
-            <li>{{Experiencia[0].tarea4}}</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>{{Experiencia[1].titulo}}</h4>
-          <h5>{{Experiencia[1].inicio}} - {{Experiencia[1].fin}}</h5>
-          <p><em>{{Experiencia[1].nombre}}</em></p>
-          <ul>
-            <li>{{Experiencia[1].tarea1}}</li>
-            <li>{{Experiencia[1].tarea2}}</li>
+            <li>{{experiencia.tarea1}}</li>
+            <li>{{experiencia.tarea2}}</li>
+            <li *ngIf="experiencia.tarea3 != null">{{experiencia.tarea3}}</li>
+            <li *ngIf="experiencia.tarea3 != null">{{experiencia.tarea4}}</li>
           </ul>
         </div>
       </div>

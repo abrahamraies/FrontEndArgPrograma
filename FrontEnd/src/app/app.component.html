@@ -7,7 +7,7 @@
       <div class="social-links mt-3 text-center">
         <a href="https://www.facebook.com/abraham.raies.3/" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/abrahamraies/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://github.com/Abraham74" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://github.com/Abrahamraies" class="github"><i class="bx bxl-github"></i></a>
         <a href="https://www.linkedin.com/in/abraham-raies-14577921b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         <hr>
       </div>
@@ -21,6 +21,8 @@
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resumen</span></a></li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contacto</span></a></li>
+        <button type="button" class="btn btn-light" (click)="iniciarSesion()" *ngIf="!isLogged"> Ingresar</button>
+        <button type="button" class="btn btn-light" (click)="cerrarSesion()" *ngIf="isLogged"> Cerar sesión</button>
       </ul>
     </nav>
   </div>
