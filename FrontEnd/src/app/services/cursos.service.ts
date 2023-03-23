@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CursosService {
-  url:string="http://localhost:8080/cursos/"
+  url:string="https://backend-ar.onrender.com/cursos/"
   constructor(private http:HttpClient) { }
 
   public obtenerDatosCursos():Observable<Curso[]>{

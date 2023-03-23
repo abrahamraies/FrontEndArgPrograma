@@ -7,7 +7,7 @@ import { Explab } from '../models/explab';
   providedIn: 'root'
 })
 export class ExplabService {
-  url:string="http://localhost:8080/experiencia/"
+  url:string="https://backend-ar.onrender.com/experiencia/"
   constructor(private http:HttpClient) { }
 
   public obtenerDatosExperiencia():Observable<any>{

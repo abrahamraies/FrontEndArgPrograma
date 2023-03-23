@@ -7,7 +7,7 @@ import { Educacion } from '../models/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  url:string="http://localhost:8080/educacion/"
+  url:string="https://backend-ar.onrender.com/educacion/"
   constructor(private http:HttpClient) { }
 
   public obtenerDatosEducacion():Observable<any>{

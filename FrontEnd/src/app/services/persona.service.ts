@@ -7,7 +7,7 @@ import { persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  url:string="http://localhost:8080/persona/"
+  url:string="https://backend-ar.onrender.com/persona/"
   constructor(private http:HttpClient) { }
 
   public obtenerDatosPersona():Observable<persona[]>{
