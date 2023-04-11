@@ -7,9 +7,9 @@
       </button>
     </div>
 
-    <div class="section-title">
+    <div class="section-title" >
       <h2>Sobre mi</h2>
-      <p>{{persona.sobre_mi}}</p>
+      <p>{{persona.resumen[0].detalle}}</p>
     </div>
 
     <div class="row">
@@ -19,7 +19,7 @@
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
         <h3>{{persona.ocupacion}}</h3>
         <p class="fst-italic">
-          {{persona.sobre_mi_r1}}
+          {{persona.resumen[1].detalle}}
         </p>
         <div class="row">
           <div class="col-lg-6">
@@ -42,10 +42,9 @@
           </div>
         </div>
         <p>
-          {{persona.sobre_mi_r2}}
+          {{persona.resumen[2].detalle}}
         </p>
       </div>
     </div>
-
   </div>
 </section>

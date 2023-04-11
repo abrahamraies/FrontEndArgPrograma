@@ -19,7 +19,6 @@ export class EditEducacionComponent implements OnInit {
         this.educacion = data;
       }, err => {
         alert("Error al modificar los datos de la educación");
-        this.router.navigate(['']);
       }
     )
   }
@@ -32,7 +31,6 @@ export class EditEducacionComponent implements OnInit {
         this.router.navigate(['Educacion']);
       }, err => {
         alert("Error al modificar los datos de la educación");
-        this.router.navigate(['']);
       }
     )
   }

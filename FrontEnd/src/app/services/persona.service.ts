@@ -7,7 +7,8 @@ import { persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  url:string="https://backend-ar.onrender.com/persona/"
+  //url:string="https://backend-ar.onrender.com/persona/"
+  url:string="http://localhost:8080/v1/persona/";
   constructor(private http:HttpClient) { }
 
   public obtenerDatosPersona():Observable<persona[]>{
@@ -23,6 +24,7 @@ export class PersonaService {
   }
 
   public editarDatosPersona(id:number,persona:persona): Observable<any>{
+    persona.id = id;
     return this.http.put<any>(this.url+`modificar/${id}`,persona);
   }
 

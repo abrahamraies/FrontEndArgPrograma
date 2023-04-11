@@ -1,22 +1,18 @@
+import { Tareas } from "./Tareas";
+
 export class Explab {
-  id_exp!: number;
+  id!: number;
   titulo: string;
   nombre: string;
   inicio: number;
   fin: string;
-  tarea1:string;
-  tarea2: string;
-  tarea3: string;
-  tarea4: string;
+  tareas: Tareas[];
 
-  constructor(titulo:string,nombre:string,inicio:number,fin:string,tarea1:string,tarea2:string,tarea3:string,tarea4:string){
+  constructor(titulo: string,nombre:string,inicio:number,fin:string,tareas:Tareas[]){
     this.titulo = titulo;
     this.nombre = nombre;
     this.inicio = inicio;
     this.fin = fin;
-    this.tarea1 = tarea1;
-    this.tarea2 = tarea2;
-    this.tarea3 = tarea3;
-    this.tarea4 = tarea4;
+    this.tareas = tareas;
   }
 }

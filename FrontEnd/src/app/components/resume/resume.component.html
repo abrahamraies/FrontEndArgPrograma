@@ -8,7 +8,7 @@
   </div>
     <div class="section-title">
       <h2>Resumen</h2>
-      <p>{{persona.resumen}}</p>
+      <p>{{persona.resumen[3].detalle}}</p>
     </div>
 
     <div class="row" *ngIf="cursosCargados == 1">
@@ -53,10 +53,8 @@
           <h5>{{experiencia.inicio}} - {{experiencia.fin}}</h5>
           <p><em>{{experiencia.nombre}} </em></p>
           <ul>
-            <li>{{experiencia.tarea1}}</li>
-            <li>{{experiencia.tarea2}}</li>
-            <li *ngIf="experiencia.tarea3 != null">{{experiencia.tarea3}}</li>
-            <li *ngIf="experiencia.tarea3 != null">{{experiencia.tarea4}}</li>
+            <li *ngFor="let tarea of experiencia.tareas">
+              {{tarea.detalle}}</li>
           </ul>
         </div>
       </div>

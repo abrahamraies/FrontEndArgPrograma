@@ -4,15 +4,16 @@
     <div class="row">
         <div class="form-group" *ngFor="let experiencia of experiencias" >
           <ol>
-            <li value="{{experiencia.id_exp}}">
+            <li value="{{experiencia.id}}">
               {{experiencia.titulo}} - {{experiencia.nombre}} <br>
               Duracion: {{experiencia.inicio}}-{{experiencia.fin}} <br>
-              Tareas: <br>
-              {{experiencia.tarea1}} <br>
-              {{experiencia.tarea2}} <br>
-              {{experiencia.tarea3}} <br>
-              {{experiencia.tarea4}} <br>
-              <button (click)="onUpdate(experiencia.id_exp)" class="btn btn-info">Editar Experiencia</button> <button (click)="onDelete(experiencia.id_exp)" class="btn btn-danger" style="margin-left: 5px;">Eliminar Experiencia</button></li>
+              <h4>Tareas:</h4>
+              <ul>
+                <li *ngFor="let tarea of experiencia.tareas">
+                  {{ tarea.detalle }}
+                </li>
+              </ul>
+              <button (click)="onUpdate(experiencia.id)" class="btn btn-info">Editar Experiencia</button> <button (click)="onDelete(experiencia.id)" class="btn btn-danger" style="margin-left: 5px;">Eliminar Experiencia</button></li>
           </ol>
         </div>
     </div>

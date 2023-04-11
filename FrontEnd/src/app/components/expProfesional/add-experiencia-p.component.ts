@@ -2,6 +2,7 @@ import { Explab } from './../../models/explab';
 import { ExplabService } from 'src/app/services/explab.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Tareas } from 'src/app/models/Tareas';
 
 @Component({
   selector: 'app-add-experiencia-p',
@@ -13,10 +14,7 @@ export class AddExperienciaPComponent implements OnInit {
   nombre: string = null;
   inicio: number = 0;
   fin: string = null;
-  tarea1: string = null;
-  tarea2: string = null;
-  tarea3: string = null;
-  tarea4: string = null;
+  tareas: Tareas[];
 
   constructor(private experienciaService:ExplabService,private router:Router) { }
 
@@ -24,14 +22,13 @@ export class AddExperienciaPComponent implements OnInit {
   }
 
   onAdd(){
-    const explab = new Explab(this.titulo,this.nombre,this.inicio,this.fin,this.tarea1,this.tarea2,this.tarea3,this.tarea4);
+    const explab = new Explab(this.titulo,this.nombre,this.inicio,this.fin,this.tareas);
     this.experienciaService.agregarDatosExperiencia(explab).subscribe(
       data=>{
         alert("Experiencia agregada");
         this.router.navigate(['Experiencia']);
       },err => {
         alert("Fallo al querer agregar una nueva Experiencia");
-        this.router.navigate(['']);
       }
     )
   }

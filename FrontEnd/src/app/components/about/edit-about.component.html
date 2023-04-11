@@ -33,7 +33,7 @@
             class="form-control"
             id="sobreMi"
             name="sobreMi"
-            [(ngModel)]="persona.sobre_mi"
+            [(ngModel)]="persona.resumen[0].detalle"
             required
           />
         </div>
@@ -44,7 +44,7 @@
             class="form-control"
             id="DActual"
             name="DActual"
-            [(ngModel)]="persona.sobre_mi_r1"
+            [(ngModel)]="persona.resumen[1].detalle"
             required
           />
         </div>
@@ -156,7 +156,7 @@
             class="form-control"
             id="DFinal"
             name="DFinal"
-            [(ngModel)]="persona.sobre_mi_r2"
+            [(ngModel)]="persona.resumen[2].detalle"
             required
           />
         </div>

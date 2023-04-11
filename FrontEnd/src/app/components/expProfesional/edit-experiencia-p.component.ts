@@ -19,7 +19,6 @@ export class EditExperienciaPComponent implements OnInit {
         this.explab = data;
       }, err => {
         alert("Error al modificar los datos de la experiencia");
-        this.router.navigate(['']);
       }
     )
   }
@@ -32,7 +31,6 @@ export class EditExperienciaPComponent implements OnInit {
         this.router.navigate(['Experiencia']);
       }, err => {
         alert("Error al modificar los datos de la Experiencia");
-        this.router.navigate(['']);
       }
     )
   }

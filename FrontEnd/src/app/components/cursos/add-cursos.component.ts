@@ -25,7 +25,6 @@ export class AddCursosComponent implements OnInit {
         this.router.navigate(['editCursos']);
       },err => {
         alert("Fallo al querer agregar un curso");
-        this.router.navigate(['']);
       }
     )
   }

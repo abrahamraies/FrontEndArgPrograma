@@ -20,7 +20,6 @@ export class EditAboutComponent implements OnInit {
         this.persona = data;
       }, err => {
         alert("Error al modificar los datos de la persona");
-        this.router.navigate(['']);
       }
     )
   }
@@ -32,7 +31,6 @@ export class EditAboutComponent implements OnInit {
         this.router.navigate(['']);
       }, err => {
         alert("Error al modificar los datos de la persona");
-        this.router.navigate(['']);
       }
     )
   }
