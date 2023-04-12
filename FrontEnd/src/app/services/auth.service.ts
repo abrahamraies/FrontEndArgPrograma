@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  //authURL = 'https://backend-ar.onrender.com/auth/';
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://backend-ar.onrender.com/auth/';
+  //authURL = 'http://localhost:8080/auth/';
 
   constructor(private httpClient:HttpClient) { }
 
