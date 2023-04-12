@@ -11,6 +11,7 @@
             class="form-control"
             id="titulo"
             name="titulo"
+            minlength="2"
             [(ngModel)]="titulo"
             required
           />
@@ -21,6 +22,7 @@
             class="form-control"
             id="nombre"
             name="nombre"
+            minlength="2"
             [(ngModel)]="nombre"
             required
           />
@@ -32,6 +34,7 @@
             id="inicio"
             name="inicio"
             [(ngModel)]="inicio"
+            (ngModelChange)="onAnioInicioChange()"
             required
           />
           <label for="fin">Fin</label>
@@ -42,6 +45,7 @@
             id="fin"
             name="fin"
             [(ngModel)]="fin"
+            (ngModelChange)="onAnioFinChange()"
             required
           />
           <label for="tarea1">Tarea 1</label>

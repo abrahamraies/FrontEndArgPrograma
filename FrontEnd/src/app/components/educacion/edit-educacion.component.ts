@@ -10,6 +10,8 @@ import { EducacionService } from 'src/app/services/educacion.service';
 })
 export class EditEducacionComponent implements OnInit {
   educacion: Educacion = null;
+  AnioFin: number;
+  fechascorrectas: boolean;
   constructor(private activatedRouter:ActivatedRoute,private educacionService:EducacionService,private router:Router) { }
 
   ngOnInit(): void {
@@ -23,12 +25,40 @@ export class EditEducacionComponent implements OnInit {
     )
   }
 
+  onAnioInicioChange() {
+    if(this.educacion.fin != "Actualidad")
+    {
+      this.AnioFin = parseInt(this.educacion.fin);
+      if (this.educacion.inicio && this.educacion.fin && this.educacion.inicio > this.AnioFin) {
+        this.fechascorrectas = false;
+      }else{
+        this.fechascorrectas = true;
+      }
+    }
+  }
+
+  onAnioFinChange() {
+    if(this.educacion.fin != "Actualidad")
+    {
+      this.AnioFin = parseInt(this.educacion.fin);
+      if (this.educacion.inicio && this.educacion.fin && this.educacion.inicio > this.AnioFin) {
+        this.fechascorrectas = false;
+      }else{
+        this.fechascorrectas = true;
+      }
+    }
+  }
+
   onUpdate(){
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionService.editarDatosEducacion(id,this.educacion).subscribe(
       data => {
-        alert("Educación modificada con exito");
-        this.router.navigate(['Educacion']);
+        if(this.fechascorrectas){
+          alert("Educación modificada con exito");
+          this.router.navigate(['Educacion']);
+        }else{
+          alert('Error: El año de inicio debe ser menor al año de finalización');
+        }
       }, err => {
         alert("Error al modificar los datos de la educación");
       }
