@@ -1,0 +1,20 @@
+<div class="container" *ngIf="proyectos">
+  <br />
+  <h2>Editar - Proyectos</h2>
+    <div class="row">
+        <div class="form-group" *ngFor="let proyecto of proyectos" >
+          <ol>
+            <li value="{{proyecto.id_proyecto}}">
+              <span>Nombre:</span> {{proyecto.nombre}} <br>
+              <span>Descripcion:</span> {{proyecto.descripcion}} <br>
+              <span>Github:</span> {{proyecto.github_Url}} <br>
+              <span>Deploy:</span> {{proyecto.deploy_Url}} <br>
+              <br>
+
+              <button (click)="onUpdate(proyecto.id_proyecto)" class="btn btn-info">Editar proyecto</button> <button (click)="onDelete(proyecto.id_proyecto)" class="btn btn-danger" style="margin-left: 5px;">Eliminar proyecto</button></li>
+          </ol>
+        </div>
+    </div>
+    <br>
+    <button (click)="addProyecto()" class="btn btn-primary">Agregar proyecto</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Salir sin editar</button>
+</div>

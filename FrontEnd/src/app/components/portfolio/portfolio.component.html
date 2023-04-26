@@ -1,56 +1,35 @@
-<section id="portfolio" class="portfolio section-bg">
-  <div class="container">
+<section id="portfolio" class="section-bg">
+  <div class="container" *ngIf="proyectosCargados == 1">
+    <div style="display: flex; justify-content: flex-end">
+      <button
+        type="button"
+        class="btn btn-primary"
+        routerLink="/Proyectos"
+        *ngIf="isLogged"
+      >
+        Editar Proyectos
+      </button>
+    </div>
 
     <div class="section-title">
       <h2>Portfolio</h2>
-      <p>Estos son algunos de mis proyectos</p>
     </div>
 
-    <div class="row" data-aos="fade-up">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
+    <p>Estos son algunos de mis proyectos</p>
+
+    <div class="project-grid">
+      <div class="project" *ngFor="let proyecto of proyectos">
+        <h2 class="project-title">{{ proyecto.nombre }}</h2>
+        <p class="project-description">{{ proyecto.descripcion }}</p>
+        <p class="project-github">
+          <a href="{{ proyecto.github_Url }}">Repositorio en GitHub</a>
+        </p>
+        <p class="project-deploy">
+          <a href="{{ proyecto.deploy_Url }}"
+            >Enlace a la aplicación en línea</a
+          >
+        </p>
       </div>
-    </div>
-
-    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-wrap">
-          <p>App de Noticias</p>
-          <img src="../../../assets/img/NoticiasPrincipal.png" class="img-fluid" alt="">
-          <div class="portfolio-links">
-            <a href="https://marvelapp.com/prototype/2i6hebeg" target="_blank" data-gallery="Noticias App" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-            <a href="https://github.com/Abrahamraies/App-de-noticias" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-wrap">
-          <p>App de Peliculas</p>
-          <img src="../../../assets/img/PeliculasPrincipal.png" class="img-fluid" alt="">
-          <div class="portfolio-links">
-            <a href="https://marvelapp.com/prototype/j8j4i3e" target="_blank" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-            <a href="https://github.com/Abrahamraies/peliculasApp" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-        <div class="portfolio-wrap">
-          <p>Web de Alquiler de vehiculos</p>
-          <img src="../../../assets/img/rentalsVenado.png" class="img-fluid" alt="">
-          <div class="portfolio-links">
-            <a href="https://marvelapp.com/prototype/9291176"  target="_blank" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Rentals Venado"><i class="bx bx-plus"></i></a>
-            <a href="https://github.com/Abrahamraies/Proyecto_alquiler_vehiculos" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

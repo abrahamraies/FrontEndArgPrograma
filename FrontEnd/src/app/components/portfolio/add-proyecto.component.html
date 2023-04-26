@@ -1,0 +1,55 @@
+<div class="container">
+  <br />
+  <h2>Agregar - Proyecto</h2>
+  <form (ngSubmit)="onAdd()" novalidate #f="ngForm">
+    <div class="row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="Nombre"
+            name="Nombre"
+            minlength="2"
+            [(ngModel)]="nombre"
+            required
+          />
+          <label for="descripcion">Descripcion</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="descripcion"
+            name="descripcion"
+            minlength="2"
+            [(ngModel)]="descripcion"
+            required
+          />
+          <label for="Github_Url">Url Github</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="github_url"
+            name="github_url"
+            [(ngModel)]="github_Url"
+            required
+          />
+          <label for="Deploy_Url">Url Deploy</label>
+          <input
+            type="text"
+            style="width: 100;"
+            class="form-control"
+            id="deploy_url"
+            name="deploy_url"
+            [(ngModel)]="deploy_Url"
+            required
+          />
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" >Agregar Proyecto</button><button (click)="salir()" class="btn btn-secondary" style="margin-left: 5px;">Volver atras</button>
+  </form>
+  <br>
+</div>

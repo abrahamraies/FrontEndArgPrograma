@@ -5,9 +5,9 @@
         <div class="form-group" *ngFor="let educacion of educaciones" >
           <ol>
             <li value="{{educacion.id_edu}}">
-              {{educacion.titulo}} - {{educacion.nombre}} <br>
-              Años: {{educacion.inicio}}-{{educacion.fin}} <br>
-              Resumen: {{educacion.resumen_edu}} <br>
+              <span>Titulo:</span> {{educacion.titulo}} - {{educacion.nombre}} <br>
+              <span>Años:</span> {{educacion.inicio}}-{{educacion.fin}} <br>
+              <span>Resumen:</span> {{educacion.resumen_edu}} <br>
               <button (click)="onUpdate(educacion.id_edu)" class="btn btn-info">Editar Educacion</button> <button (click)="onDelete(educacion.id_edu)" class="btn btn-danger" style="margin-left: 5px;">Eliminar Educacion</button></li>
           </ol>
         </div>

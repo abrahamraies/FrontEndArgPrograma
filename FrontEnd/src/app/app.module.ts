@@ -27,6 +27,9 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaPComponent } from './components/expProfesional/experiencia-p.component';
 import { EditExperienciaPComponent } from './components/expProfesional/edit-experiencia-p.component';
 import { AddExperienciaPComponent } from './components/expProfesional/add-experiencia-p.component';
+import { ProyectosComponent } from './components/portfolio/proyectos.component';
+import { AddProyectoComponent } from './components/portfolio/add-proyecto.component';
+import { EditProyectoComponent } from './components/portfolio/edit-proyecto.component';
 
 
 
@@ -52,7 +55,10 @@ import { AddExperienciaPComponent } from './components/expProfesional/add-experi
     EducacionComponent,
     ExperienciaPComponent,
     EditExperienciaPComponent,
-    AddExperienciaPComponent
+    AddExperienciaPComponent,
+    ProyectosComponent,
+    EditProyectoComponent,
+    AddProyectoComponent
   ],
   imports: [
     BrowserModule,

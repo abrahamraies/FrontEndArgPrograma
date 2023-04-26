@@ -224,17 +224,18 @@ h6 {
   height: 100vh;
   background: url("../src/assets/img/fondo.jpg") top center;
   background-size: cover;
+  position: relative;
 }
 
 
 #home:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
   position: absolute;
-  bottom: 0;
   top: 0;
-  left: 0;
   right: 0;
+  width: 200px;
+  height: 200px;
+  background: url("../src/assets/img/logo-blanco-vertical.png") no-repeat center center ;
   z-index: 1;
 }
 
